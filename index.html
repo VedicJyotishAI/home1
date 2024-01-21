@@ -59,9 +59,31 @@
     <p><img class="logo" src="vedic.png" style="border-radius: 50%;" alt="Vedic Jyotish AI"></p>
     <p lang="hi">हम वैदिक ज्योतिष पर AI की सहायता से अनुसंधान (researching) करते हुए AI Tools (टूल्स) विकसित कर रहे
         है।</p>
-    <h3>Tool1: 'Aaj Ka Choghadiya', Check Latest Choghadiya on Twitter: <a href="https://twitter.com/vedicjyotishai">@VedicJyotishAI</a></h3>
+    <h3>Tool1: 'Aaj Ka Choghadiya', Check Latest Choghadiya on Twitter: <a href="https://twitter.com/vedicjyotishai">@VedicJyotishAI</a>
+    </h3>
+    <div id="time"></div>
+
+    <script>
+        function updateTime() {
+            var now = new Date();
+            var offset = 5.5;
+            var utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+            var ist = new Date(utc + (3600000 * offset));
+            var hours = ist.getHours();
+            var minutes = ist.getMinutes();
+            var seconds = ist.getSeconds();
+            var formattedTime = hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+            var daysInHindi = ['रविवार', 'सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार'];
+            var dayInHindi = daysInHindi[ist.getDay()];
+            formattedTime = 'समय: ' + formattedTime + ' | स्थान: दिल्ली, भारत (भारतीय मानक समय) | दिन: ' + dayInHindi;
+            document.getElementById('time').innerText = formattedTime;
+        }
+
+        setInterval(updateTime, 1000);
+    </script>
+
     <p><img
-            src="/20240121/Choghadiya 2024-01-21.png" alt="Aaj Ka Choghadiya रविवार, 21 जनवरी 2024"
+            src="/20240121/Choghadiya 2024-01-21.png" alt="Aaj Ka Choghadiya"
             style="max-width: 70%;height: auto;box-shadow: 10px 10px 5px grey;border-radius:16px;"></p>
     <p lang="hi" style="text-align: center">यही आप हमारे प्रयास की सहायता करना चाहते हैं तो कृपया <a
             href="https://www.youtube.com/@VedicJyotishAI?sub_confirmation=1">YouTube</a> पर हमें सब्सक्राइब करें और
