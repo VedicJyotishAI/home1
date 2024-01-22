@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vedic Jyotish AI</title>
+    <title>Vedic Jyotish AI - वैदिक ज्योतिष एआई</title>
     <meta name="description"
           content="हम वैदिक ज्योतिष (Vedic Jyotish) पर AI की सहायता से अनुसंधान (researching) करते हुए AI Tools (टूल्स) विकसित कर रहे है।">
     <link rel="icon" type="image/png" href="/vedic.png">
@@ -59,6 +59,7 @@
     <p><img class="logo" src="vedic.png" style="border-radius: 50%;" alt="Vedic Jyotish AI"></p>
     <p lang="hi">हम वैदिक ज्योतिष पर AI की सहायता से अनुसंधान (researching) करते हुए AI Tools (टूल्स) विकसित कर रहे
         है।</p>
+    <hr>
     <h3>Tool1: 'Aaj Ka Choghadiya'</h3>
     <div id="time"></div>
     <p><img
@@ -123,8 +124,36 @@
 
         updateImageSrc();
     </script>
+    <hr>
 
+    <h3>Tool 2: Chinese Zodiac Calculator (चीनी राशि कैलकुलेटर)</h3>
+    <label for="dob">अपनी जन्मतिथि इनपुट करे: </label>
+    <input type="date" id="dob">
+    <br><br>
+    <button onclick="calculateZodiac()">राशिचक्र (Calculate Zodiac)</button>
+    <button onclick="clearDOB()">साफ़ करे</button>
+    <br><br>
+    <div id="result"></div>
 
+    <script>
+        function calculateZodiac() {
+            const dobInput = document.getElementById("dob").value;
+            const dob = new Date(dobInput);
+            const year = dob.getFullYear();
+            const zodiacSigns = ["Rat (मूषक)", "Ox (बैल)", "Tiger (बाघ)", "Rabbit (खरगोश)", "Dragon (ड्रैगन)", "Snake (सांप)", "Horse (घोड़ा)", "Sheep (भेड़)", "Monkey (मंकी)", "Rooster (मुर्गा)", "Dog (कुत्ता)", "Pig (सूअर)"]
+            const startYear = 1900;
+            const zodiacIndex = (year - startYear) % 12;
+            const zodiacSign = zodiacSigns[zodiacIndex];
+            const resultElement = document.getElementById("result");
+            resultElement.textContent = `Your Chinese Zodiac Sign is: ${zodiacSign}`;
+        }
+
+        function clearDOB() {
+            document.getElementById("dob").value = "";
+            document.getElementById("result").textContent = "";
+        }
+    </script>
+    <hr>
     <p lang="hi" style="text-align: center">यही आप हमारे प्रयास की सहायता करना चाहते हैं तो कृपया <a
             href="https://www.youtube.com/@VedicJyotishAI?sub_confirmation=1">YouTube</a> पर हमें सब्सक्राइब करें और
         हमें प्रोत्साहित करें।</p>
