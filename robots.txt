@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /20240121/
+Disallow: /img/
