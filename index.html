@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vedic Jyotish AI - वैदिक ज्योतिष एआई</title>
+    <title>Vedic Jyotish Astrology with AI</title>
     <meta name="description"
-          content="हम वैदिक ज्योतिष (Vedic Jyotish) पर AI की सहायता से अनुसंधान (researching) करते हुए AI Tools (टूल्स) विकसित कर रहे है।">
+          content="We are developing AI tools to enhance Vedic Jyotish Astrology, combining traditional wisdom with artificial intelligence for insightful research.">
     <link rel="icon" type="image/png" href="/vedic.png">
     <style>
         body {
@@ -83,8 +83,8 @@
             var formattedTime = hours + ":" + (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds + " " + ampm;
             var daysInHindi = ['रविवार', 'सोमवार', 'मंगलवार', 'बुधवार', 'गुरुवार', 'शुक्रवार', 'शनिवार'];
             var dayInHindi = daysInHindi[ist.getDay()];
-            formattedTime = 'समय: ' + formattedTime + ' | स्थान: दिल्ली, भारत (भारतीय मानक समय) | दिन: ' + dayInHindi;
-            document.getElementById('time').innerText = formattedTime;
+            formattedTime = 'स्थान: दिल्ली, भारत ' + '| समय: ' + formattedTime + ' (भारतीय मानक समय) | दिन: ' + dayInHindi;
+            document.getElementById('time').innerHTML = `<strong style="color:red;">${formattedTime}</strong>`;
         }
 
         setInterval(updateTime, 1000);
